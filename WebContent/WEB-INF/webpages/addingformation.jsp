@@ -37,6 +37,7 @@
   <div class="form-group">
     <label>Formation location</label>
     <select class="form-control" name="formationlocation" id="locfor">
+    	<option> -Ville- </option>
     	<c:forEach items="${listing}" var="lf">
       		<option value="${lf.idLieu}"> ${lf.city} </option>
       	</c:forEach>
