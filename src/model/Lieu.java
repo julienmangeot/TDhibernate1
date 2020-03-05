@@ -51,7 +51,7 @@ public class Lieu {
 	}
 
 	public String toString() {
-		return "Lieu [idLieu=" + idLieu + ", address=" + address + ", city=" + city + "]";
+		return "IdLieu=" + idLieu + ", address=" + address + ", city=" + city;
 	}
 
 }

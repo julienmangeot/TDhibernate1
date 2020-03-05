@@ -25,6 +25,7 @@ public class FormationDao implements IFormationDao{
 			session.beginTransaction();
 			session.save(formation);
 			session.getTransaction().commit();
+			session.close();
 			System.out.println("Formation creation succeded");
 			return true;
 		}
@@ -42,6 +43,7 @@ public class FormationDao implements IFormationDao{
 			SQLQuery query= session.createSQLQuery("Select * from Formation");
 			query.addEntity(Formation.class);
 			list= query.list();
+			session.close();
 			System.out.println("Formation display succeded");
 			return list;
 		}
@@ -56,9 +58,10 @@ public class FormationDao implements IFormationDao{
 		List<Formation> list = new ArrayList<Formation>();
 		try {
 			session.beginTransaction();
-			Query query= session.createQuery("from Formation where lieu.idLieu:=idLieu");
+			Query query= session.createQuery("from Formation where lieu.idLieu= :idLieu");
 			query.setParameter("idLieu", lieu.getIdLieu());
 			list= query.list();
+			session.close();
 			System.out.println("Formation with Lieu display succeded");
 			return list;
 		}

@@ -17,16 +17,31 @@
   		<div class="collapse navbar-collapse" id="navbarNav">
     		<ul class="navbar-nav">
      			<li class="nav-item active">
-        			<a class="nav-link" href="/TDHibernate1/add">Adding <span class="sr-only">(current)</span></a>
+        			<a class="nav-link" href="/TDHibernate1/addf">Adding a formation<span class="sr-only">(current)</span></a>
+      			</li>
+      			 <li class="nav-item active">
+        			<a class="nav-link" href="/TDHibernate1/addl">Adding a location<span class="sr-only">(current)</span></a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="/TDHibernate1/show">Listing</a>
+        			<a class="nav-link" href="/TDHibernate1/showf">Listing formations<span class="sr-only">(current)</span></a>
       			</li>
     		</ul>
   		</div>
 	</nav>
+<form action="/TDHibernate1/showf" method="post">
+<div class="form-group">
+    <label>Select a location</label>
+    <select class="form-control" name="location" id="location">
+    	<c:forEach items="${listingl}" var="l">
+      		<option value="${l.idLieu}"> ${l.city} </option>
+      	</c:forEach>
+    </select>
+    <button type="submit" class="btn btn-primary">Valider</button>
+  </div>
+  </form>
 <div>
-	<c:forEach items="${listing}" var="fr">
+<label>Here all formations connected to this location</label>
+	<c:forEach items="${listingf}" var="fr">
 		<h2> Id Formation: ${fr.idFormation} </h2>
 		<h2> Theme Formation:  ${fr.theme}</h2>
 	</c:forEach>

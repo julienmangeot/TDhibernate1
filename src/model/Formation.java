@@ -53,7 +53,7 @@ public class Formation {
 	}
 
 	public String toString() {
-		return "Formation [id=" + idFormation + ", theme=" + theme + "]";
+		return "Id Formation :" + idFormation + ", theme=" + theme+", Lieu :"+lieu;
 	}
 
 	
